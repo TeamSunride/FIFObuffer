@@ -3,7 +3,7 @@ name: PlatformIO CI
 on: [push]
 
 jobs:
-  build:
+  build_and_test:
 
     runs-on: ${{ matrix.os }}
     strategy:

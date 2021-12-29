@@ -93,7 +93,7 @@ int main(int args, char **argv) {
     RUN_TEST(test_FIFObuffer_push);
     RUN_TEST(test_FIFObuffer_get);
     // RUN_TEST(test_FIFObuffer_push_and_get);
-    RUN_TEST(test_FIFObuffer_sum);
+    // RUN_TEST(test_FIFObuffer_sum);
 
     UNITY_END();
 
