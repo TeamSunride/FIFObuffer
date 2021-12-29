@@ -36,7 +36,7 @@ jobs:
           unzip /tmp/spi4teensy3.zip -d /tmp
 
       - name: Run PlatformIO (build library into a temporary project)
-        run: pio ci --project-conf platformio.ini --build-dir "out" --keep-build-dir "src" ".\examples\*"
+        run: pio ci --project-conf platformio.ini --build-dir "out" --keep-build-dir "src" "examples/*"
 
       - name: Copy test folder into build directory
         run: cp test out/test -r
