@@ -39,7 +39,7 @@ jobs:
         run: pio ci --project-conf platformio.ini --build-dir "out" --keep-build-dir "src" "examples/*"
 
       - name: Copy test folder into build directory
-        run: cp test out/test -r
+        run: cp -R test out/test
 
       - name: Run PIO unit tests natively
         run: pio test -d "out"
