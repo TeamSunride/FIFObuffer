@@ -39,7 +39,7 @@
 template <typename T, int FIFOsize>
 class FIFObuffer {
 private:
-    T buffer[FIFOsize]{};
+    T buffer[FIFOsize];
     int head;
     int tail;
     int numElements;
