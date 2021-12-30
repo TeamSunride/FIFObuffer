@@ -64,8 +64,13 @@ void test_FIFObuffer_sum() {
     FIFObuffer<int, 3> buffer;
     buffer.put(1);
     buffer.put(2);
-    buffer.put(3);
+    buffer.push(3);
     TEST_ASSERT_EQUAL(6, buffer.sum());
+
+    FIFObuffer<int, 3> buffer2;
+    buffer2.put(1);
+    buffer2.put(2);
+    TEST_ASSERT_EQUAL(3, buffer2.sum());
 }
 
 void test_FIFObuffer_clear() {
@@ -79,17 +84,27 @@ void test_FIFObuffer_clear() {
     TEST_ASSERT_EQUAL(10, buffer.sum());
 }
 
+void test_FIFObuffer_push_and_get() {
+    FIFObuffer<int, 2> buffer;
+    buffer.put(0);
+    buffer.put(1);
+    buffer.push(2);
+    TEST_ASSERT_EQUAL(2, buffer.get(0));
+    TEST_ASSERT_EQUAL(1, buffer.get(1));
+}
+
 int main(int args, char **argv) {
     UNITY_BEGIN();
-
+    RUN_TEST(test_FIFObuffer_push_and_get);
     RUN_TEST(test_FIFObuffer_count);
     RUN_TEST(test_FIFObuffer_full_empty);
     RUN_TEST(test_FIFObuffer_order);
     RUN_TEST(test_FIFObuffer_put);
     RUN_TEST(test_FIFObuffer_push);
-    RUN_TEST(test_FIFObuffer_get);
     RUN_TEST(test_FIFObuffer_sum);
     RUN_TEST(test_FIFObuffer_clear);
+    RUN_TEST(test_FIFObuffer_get);
+
 
     UNITY_END();
 

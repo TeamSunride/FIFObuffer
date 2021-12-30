@@ -114,7 +114,9 @@ void FIFObuffer<T, FIFOsize>::clear() {
 
 template<typename T, int FIFOsize>
 T FIFObuffer<T, FIFOsize>::get(int index) {
-    int actual_index = (tail - index) % FIFOsize;
+    // we add FIFOsize to (tail - index) to make sure actual_index never goes negative
+    // as you can't have a negative index of an array
+    int actual_index = (FIFOsize + tail - index) % FIFOsize;
     return buffer[actual_index];
 }
 

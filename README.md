@@ -8,9 +8,6 @@ Changes made:
 - Added extra methods
 - You can change the type and size of the buffer
 
-Known issues/TODO:
-- `FIFObuffer::get()` doesn't work properly
-
 # Explanation
 
 https://en.wikipedia.org/wiki/FIFO_(computing_and_electronics)
