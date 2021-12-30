@@ -81,7 +81,7 @@ public:
     /**
      * Reset the buffer. Empty the array of its elements and set the head/tail/numElements to 0
      */
-    void resetFIFO();
+    void clear();
 
     /**
      * Get an item from the buffer

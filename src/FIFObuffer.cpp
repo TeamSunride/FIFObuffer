@@ -106,7 +106,7 @@ bool FIFObuffer<T, FIFOsize>::isEmpty() const {
 }
 
 template<typename T, int FIFOsize>
-void FIFObuffer<T, FIFOsize>::resetFIFO() {
+void FIFObuffer<T, FIFOsize>::clear() {
     head = 0;
     tail = 0;
     numElements = 0;
@@ -122,7 +122,7 @@ template<typename T, int FIFOsize>
 T FIFObuffer<T, FIFOsize>::sum() {
     T total = 0;
     int i;
-    for (i = 0; i < FIFOsize; i++) {
+    for (i = 0; i < numElements; i++) {
         total += get(i);
     }
     return total;
