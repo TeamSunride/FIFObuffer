@@ -1,4 +1,4 @@
-pio ci --project-conf platformio.ini --build-dir "out" --keep-build-dir "src" ".\examples\*"
-cp test out/test -r
+pio ci --project-conf platformio.ini --build-dir "out" --keep-build-dir "src" "examples/*"
+cp -R test out/test
 pio test -d "out"
-rm -r "out"
+rm -R "out"
